@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--spring p命令  属性注入方式   归根到底走的设值注入-->
+    <bean id="user" class="cn.kgc.springdemo.entity.User" p:userName="admin" p:userPassword="123456">
+    </bean>
+
+</beans>

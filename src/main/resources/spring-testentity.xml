@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="cn.kgc.springdemo.entity.TestEntity" id="testEntity">
+        <!--在spring中不同的数据类型，有不同的注入方式-->
+        <property name="specialCharacter1">
+            <!--转义特殊字符-->
+            <value><![CDATA[&]]></value>
+        </property>
+        <property name="specialCharacter2">
+            <!--转义特殊字符2-->
+            <value>A&amp;B</value>
+        </property>
+        <property name="innerBean">
+            <!--设置内部类-->
+            <bean class="cn.kgc.springdemo.entity.User">
+                <!--设置内部类的属性-->
+                <property name="userName" value="admin"/>
+                <property name="userPassword" value="123465"/>
+            </bean>
+        </property>
+        <!--设置数组的数据类型-->
+        <property name="array">
+            <array>
+                <value>1</value>
+                <value>2</value>
+                <value>3</value>
+                <value>4</value>
+            </array>
+        </property>
+        <!--设置list 集合-->
+        <property name="list">
+            <list>
+                <value>足球</value>
+                <value>篮球</value>
+                <value>乒乓球</value>
+            </list>
+        </property>
+        <property name="set">
+            <set>
+                <value>set集合</value>
+                <value>set集合</value>
+                <value>set集合</value>
+                <value>set集合</value>
+            </set>
+        </property>
+        <property name="map">
+            <map>
+                <entry key="CN" value="中华人民共和国"/>
+                <entry key="USA" value="美利坚和国"/>
+            </map>
+        </property>
+        <!--类似于properties文件的设置-->
+        <property name="props">
+            <props>
+                <prop key="CN">中华人民共和国</prop>
+            </props>
+        </property>
+        <!--空的一个值-->
+        <property name="emptyValue">
+            <!--类似于 ""-->
+            <value></value>
+        </property>
+        <property name="nullValue">
+            <null></null>
+        </property>
+    </bean>
+</beans>

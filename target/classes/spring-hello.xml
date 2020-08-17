@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+        <!--HelloSpring  这个类注入到spring 容器中-->
+        <!--在spring中注入bean 规则如下，
+            第一个你从哪里来（全限定类名）
+            第二个你叫什么名字（当前容器中的唯一标识）
+            第三 你需要谁的帮助（当前测试用例中没有用到此测试）
+        -->
+    <bean class="cn.kgc.springdemo.hello.HelloSpring" name="helloSpring">
+        <!--property 通过属性名来进行赋值  所谓的[设值注入]-->
+        <!--<property name="str" value="Spring"/>-->
+        <!--spring 注入方式是构造注入 name是属性的名称 value提供的是数据内容-->
+        <constructor-arg name="str" value="构造注入"/>
+    </bean>
+</beans>
